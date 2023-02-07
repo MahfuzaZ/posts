@@ -106,7 +106,6 @@
    }
 }
 
-
 .info{
     width: 100%;
     max-width: 90%;
@@ -115,8 +114,6 @@
     padding-bottom: 5rem;
     display: flex;
     align-items: center;
-    // justify-content: space-between;
-    // justify-content: center;
     gap: 3rem;
 
     .right{
@@ -136,7 +133,7 @@
             max-width: 50rem;
         }
 
-        a{
+        button{
             padding: 1rem 1.5rem;
             align-self: start;
             border-radius: 30px;
@@ -151,4 +148,21 @@
             }
         }
     }
+
+    .light{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;   
+    }
+}
+
+.left{
+    padding: 0 3.3%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
 }

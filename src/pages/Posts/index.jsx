@@ -12,18 +12,18 @@ import { useContext } from 'react'
 function Posts() {
   const {darkMode, setdarkMode} = useContext(themeContext)
   const [post, setPost] = useState([])
-  const{ id} = useParams()
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then(res => res.json())
       .then(data => setPost(data))
   }, [])
+
   return (
     <div className={darkMode ? `dark ${sass.posts}` : `${sass.posts}`}>
         <ul className={sass.ul}>
           {post?.map((elem) => (
-            <li  key={elem.id}><img src={img1} alt="" /><h3>{elem.title}</h3><Link to={`/posts/${elem.id}`}>Learn more</Link></li>
+            <li  key={elem.userId}><img src={img1} alt="" /><h3>{elem.title}</h3><Link to={`/posts/${elem.id}`}>Learn more</Link></li>
           ))}
         </ul>
     </div>

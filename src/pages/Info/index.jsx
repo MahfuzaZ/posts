@@ -9,12 +9,23 @@ import { useContext } from 'react'
 function Info() {
     const {id} = useParams()
     const [post, setPost] = useState([])
+    const [comment, setComment] = useState([])
+
+
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
           .then(res => res.json())
           .then(data => setPost(data))
-      }, [id])
+      }, [])
+
+      useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+        .then(res => res.json())
+        .then(res => setComment(res))
+      }, [])
+
   return (
+    <>
     <div className={sass.info}>
          <div className={sass.left}>
             <img src={img} alt="" />
@@ -23,9 +34,19 @@ function Info() {
             <h1>{`Id: ${post.id}`}</h1>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
-            <Link to={`/posts/${post.id}/comments`}>Comments</Link>
          </div>
     </div>
+    <div className={sass.left}>
+    {comment.map(elem => (
+        <div className={sass.comment}>
+            <img src={elem.image} />
+            <h2>{elem.id}</h2>
+            <h1>{elem.email}</h1>
+            <p>{elem.name}</p>
+        </div>
+    ))}
+  </div>
+  </>
   )
 }
 

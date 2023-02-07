@@ -7,11 +7,12 @@ import { useContext } from 'react'
 function Comments() {
   const {darkMode, setdarkMode} = useContext(themeContext)
     const [comment, setComment] = useState([])
-    const comments = useParams()
+    const {comments} = useParams()
+    console.log(comment)
     useEffect(()=>{
         fetch("https://jsonplaceholder.typicode.com/comments")
          .then(res => res.json())
-         .then(data => setComment(data))
+         .then(data => console.log(data))
     })
   return (
     <div className={darkMode ? `dark` : `light`}>

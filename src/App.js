@@ -22,7 +22,6 @@ function App() {
             <Route path='/about' element={<About/>}/>
             <Route path='/posts' element={<Posts/>}/>
             <Route path='/posts/:id' element={<Info/>}/>
-            <Route path='/posts/:id/:comments' element={<Comments/>}/>
             <Route path='/contact' element={<Contact/>}/>
          </Routes>
       </Layout>
