@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.active{
+   color: #333ADB !important;
+   
+}
+
+.dark{
+  background-color: #000;
+  color: #fff !important;
+}
+.light{
+  background-color: #fff;
+  color: #000;
+}
